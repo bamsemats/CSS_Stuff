@@ -1,15 +1,66 @@
+@property --color-bg {
+  syntax: "<color>";
+  initial-value: #EEE;
+  inherits: true;
+} 
+@property --button-one {
+  syntax: "<color>";
+  initial-value: #AAA;
+  inherits: true;
+} 
+@property --button-two {
+  syntax: "<color>";
+  initial-value: #999;
+  inherits: true;
+} 
+@property --button-three {
+  syntax: "<color>";
+  initial-value: #888;
+  inherits: true;
+} 
+@property --button-bg {
+  syntax: "<color>";
+  initial-value: #EEEDDD;
+  inherits: true;
+} 
+@property --color-text {
+  syntax: "<color>";
+  initial-value: #444;
+  inherits: true;
+} 
+@property --color-text-2 {
+  syntax: "<color>";
+  initial-value: #555;
+  inherits: true;
+} 
+
 :root {
-  --color-bg: #DDD;
-  --color-button: #333;
-  --color-button-bg: #CCCBBF;
-  --color-text: #444;
-  --color-text-2: #555;
+
+
+  transition: 
+    --color-bg 250ms, 
+    --color-button-one 250ms, 
+    --color-button-two 250ms, 
+    --color-button-three 250ms, 
+    --color-button-bg 250ms,
+    --color-text 0ms,
+    --color-text-2 0ms;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .App {
@@ -20,14 +71,51 @@
   min-height: 100vh;
   width: 100%;
   background-color: var(--color-bg);
-  
 }
-
-button {
-  color: var(--color-button);
-  background-color: var(--color-button-bg);
-  border: 1rem solid var(--color-button);
-  border-radius: 1.75rem;
+:root:has(#light:checked) {
+  --color-bg: #EEE;
+  --color-button-one: #AAA;
+  --color-button-two: #999;
+  --color-button-three: #888;
+  --color-button-bg: #EEEDDD;
+  --color-text: #444;
+  --color-text-2: #555;
+}
+:root:has(#dark:checked) {
+  --color-bg: #222;
+  --color-button-one: #DDD;
+  --color-button-two: #EEE;
+  --color-button-three: #FFF;
+  --color-button-bg: #22222F;
+  --color-text: #CCC;
+  --color-text-2: #DDD;
+}
+:root:has(#pink:checked) {
+  --color-bg: #db7bea;
+  --color-button-one: #e5d8e8;
+  --color-button-two: #dbc7e0;
+  --color-button-three: #d7c1db;
+  --color-button-bg: #b251c1;
+  --color-text: #e5d8e8;
+  --color-text-2: #dbc7e0;
+}
+:root:has(#blue:checked) {
+  --color-bg: #71b4e4;
+  --color-button-one: #d8e5ef;
+  --color-button-two: #d0dce5;
+  --color-button-three: #c8d5df;
+  --color-button-bg: #4d94c7;
+  --color-text: #d8e5ef;
+  --color-text-2: #d0dce5;
+}
+:root:has(#green:checked) {
+  --color-bg: #71e4a9;
+  --color-button-one: #ddebe4;
+  --color-button-two: #d7eae0;
+  --color-button-three: #d0e4da;
+  --color-button-bg: #57d594;
+  --color-text: #ddebe4;
+  --color-text-2: #d7eae0;
 }
 
 .svg-container {
@@ -44,7 +132,10 @@ button {
 }
 /* Button One */
 .button-one {
-  --color-button: #777
+  color: var(--color-button-one);
+  background-color: var(--color-button-bg);
+  border: 1rem solid var(--color-button-one);
+  border-radius: 1.75rem;
 }
 
 .button-one .line {
@@ -78,9 +169,11 @@ button {
 }
 
 /* Button Two */
-
 .button-two {
-  --color-button: #777abc;
+  color: var(--color-button-two);
+  background-color: var(--color-button-bg);
+  border: 1rem solid var(--color-button-two);
+  border-radius: 1.75rem;
 }
 
 .button-two .hamburger {
@@ -142,11 +235,14 @@ button {
 
 /* Button Three */
 .button-three {
-  --color-button: #777F3B;
+  color: var(--color-button-three);
+  background-color: var(--color-button-bg);
+  border: 1rem solid var(--color-button-three);
+  border-radius: 1.75rem;
 }
 
 .button-three .line {
-  transition: 1s;
+  
   stroke-dasharray: 69 33 69 32 69 1000;
   --transition-time: 750ms;
   --transition-rate: cubic-bezier(0.4, 0, 0.6, 1);
@@ -262,15 +358,16 @@ button {
   --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
   overflow-y: clip;
 }
-
+.animated-list-container-three a {
+  transition: 
+    transform var(--transition-duration) var(--timing-function),
+    translate 0s calc(var(--transition-duration) / 2);
+}
 .animated-list-container-three a[data-state = 'activated'] {
   display: block;
   overflow-y: clip;
-  transition: 
-    transform var(--transition-duration) var(--timing-function),
-    translate 0s calc(var(--transition-duration) / 2),
-    --color-text 1000ms;  
-    animation: animated-list-three-blur-out var(--transition-duration);
+  
+  animation: animated-list-three-blur-out var(--transition-duration);
 }
 
 .animated-list-container-three > span {
@@ -281,7 +378,8 @@ button {
   
   translate: 0 2lh;
   transform: translateY(-2lh);
-
+  --color-text: var(--random-color);
+  --color-text-2: var(--random-color-2);
   animation: animated-list-three-blur-in var(--transition-duration) forwards;
 }
 
@@ -290,31 +388,18 @@ button {
     filter: blur(0);
   }
   50% {
-    filter: blur(2px);
-  }
-  55% {
-    --color-text-2: ;
-    --color-text: ;
+    filter: blur(4px);
   }
   100% {
     filter: blur(0);
-    --color-text-2: var(--random-color-2);
-    --color-text: var(--random-color);
   }
 }
 @keyframes animated-list-three-blur-out {
   0% {
     filter: blur(0);
-    --color-text-2: var(--random-color-2);
-    --color-text: var(--random-color);
-  }
-  35% {
-    --color-text-2: var(--random-color-2);
-    --color-text: var(--random-color);
   }
   50% {
-    filter: blur(2px);
-    
+    filter: blur(4px);
   }
   100% {
     filter: blur(0);
