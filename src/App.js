@@ -143,15 +143,15 @@ function App() {
         </div>
         <div className='animated-list-container-three'>
           <div><a href='#' style={{'--sibling-index': 1}} className='span1' onMouseEnter={() =>handleMouseEnter('span1')}><span className='inner-span'>01</span>Banana</a></div>
-          <span><a href='#' style={{'--sibling-index': 2}} className='span2' onMouseEnter={() =>handleMouseEnter('span2')}><span className='inner-span'>02</span>Pear</a></span>
-          <span><a href='#' style={{'--sibling-index': 3}} className='span3' onMouseEnter={() =>handleMouseEnter('span3')}><span className='inner-span'>03</span>Orange</a></span>
-          <span><a href='#' style={{'--sibling-index': 4}} className='span4' onMouseEnter={() =>handleMouseEnter('span4')}><span className='inner-span'>04</span>Apple</a></span>
-          <span><a href='#' style={{'--sibling-index': 5}} className='span5' onMouseEnter={() =>handleMouseEnter('span5')}><span className='inner-span'>05</span>Melon</a></span>
-          <span><a href='#' style={{'--sibling-index': 6}} className='span6' onMouseEnter={() =>handleMouseEnter('span6')}><span className='inner-span'>06</span>Grape</a></span>
-          <span><a href='#' style={{'--sibling-index': 7}} className='span7' onMouseEnter={() =>handleMouseEnter('span7')}><span className='inner-span'>07</span>Mango</a></span>
-          <span><a href='#' style={{'--sibling-index': 8}} className='span8' onMouseEnter={() =>handleMouseEnter('span8')}><span className='inner-span'>08</span>Peach</a></span>
-          <span><a href='#' style={{'--sibling-index': 9}} className='span9' onMouseEnter={() =>handleMouseEnter('span9')}><span className='inner-span'>09</span>Lemon</a></span>
-          <span><a href='#' style={{'--sibling-index': 10}} className='span10' onMouseEnter={() =>handleMouseEnter('span10')}><span className='inner-span'>10</span>Clementine</a></span>
+          <div><a href='#' style={{'--sibling-index': 2}} className='span2' onMouseEnter={() =>handleMouseEnter('span2')}><span className='inner-span'>02</span>Pear</a></div>
+          <div><a href='#' style={{'--sibling-index': 3}} className='span3' onMouseEnter={() =>handleMouseEnter('span3')}><span className='inner-span'>03</span>Orange</a></div>
+          <div><a href='#' style={{'--sibling-index': 4}} className='span4' onMouseEnter={() =>handleMouseEnter('span4')}><span className='inner-span'>04</span>Apple</a></div>
+          <div><a href='#' style={{'--sibling-index': 5}} className='span5' onMouseEnter={() =>handleMouseEnter('span5')}><span className='inner-span'>05</span>Melon</a></div>
+          <div><a href='#' style={{'--sibling-index': 6}} className='span6' onMouseEnter={() =>handleMouseEnter('span6')}><span className='inner-span'>06</span>Grape</a></div>
+          <div><a href='#' style={{'--sibling-index': 7}} className='span7' onMouseEnter={() =>handleMouseEnter('span7')}><span className='inner-span'>07</span>Mango</a></div>
+          <div><a href='#' style={{'--sibling-index': 8}} className='span8' onMouseEnter={() =>handleMouseEnter('span8')}><span className='inner-span'>08</span>Peach</a></div>
+          <div><a href='#' style={{'--sibling-index': 9}} className='span9' onMouseEnter={() =>handleMouseEnter('span9')}><span className='inner-span'>09</span>Lemon</a></div>
+          <div><a href='#' style={{'--sibling-index': 10}} className='span10' onMouseEnter={() =>handleMouseEnter('span10')}><span className='inner-span'>10</span>Clementine</a></div>
         </div>
       </div>
     </div>
