@@ -2,6 +2,8 @@
   --color-bg: #DDD;
   --color-button: #333;
   --color-button-bg: #CCCBBF;
+  --color-text: #444;
+  --color-text-2: #555;
 }
 
 *,
@@ -16,8 +18,9 @@
   text-align: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
   background-color: var(--color-bg);
-  padding-top: 3rem;
+  
 }
 
 button {
@@ -32,7 +35,12 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: 4rem;
   width: 80vw;
+}
+
+.hamburger {
+  width: calc(10px + 15vw);
 }
 /* Button One */
 .button-one {
@@ -161,7 +169,157 @@ button {
   animation: hamburger-three-open var(--transition-time) var(--transition-rate) forwards;
 }
 
+/* Animated List */
 
+.animated-list-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80vw;
+  height: 140vh;
+  padding: 0rem 2rem;
+  margin-top: 8rem;
+}
+
+.animated-list-container-one,
+.animated-list-container-two,
+.animated-list-container-three {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.animated-list-container-one a,
+.animated-list-container-two a,
+.animated-list-container-three a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: inline-block;
+}
+
+.animated-list-container-one span,
+.animated-list-container-two span,
+.animated-list-container-three span {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-right: 0.25rem;
+  color: var(--color-text-2);
+}
+
+.animated-list-container-one {
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    & > a {
+      transform-origin: left;
+      transition: transform 0.75s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    &:hover > a:not(:hover) {
+      opacity: 0.25;
+      transform: scale(0.8);
+    }
+  }
+}
+
+.animated-list-container-two a {
+  transform-origin: -150% 50%;
+  transition: transform 2s, opacity 0.3s;
+}
+
+.animated-list-container-two {
+ 
+  --arc: 4deg;
+  --distance-multiplier-percentage: .25;
+
+  @media (hover) and (prefers-reduced-motion: no-preference) {
+    &:has(a:nth-child(1):hover) {--target: 1}
+    &:has(a:nth-child(2):hover) {--target: 2}
+    &:has(a:nth-child(3):hover) {--target: 3}
+    &:has(a:nth-child(4):hover) {--target: 4}
+    &:has(a:nth-child(5):hover) {--target: 5}
+    &:has(a:nth-child(6):hover) {--target: 6}
+    &:has(a:nth-child(7):hover) {--target: 7}
+    &:has(a:nth-child(8):hover) {--target: 8}
+    &:has(a:nth-child(9):hover) {--target: 9}
+    &:has(a:nth-child(10):hover) {--target: 10}
+
+    &:hover > a:not(:hover) {
+      --distance-from-target: calc(var(--sibling-index) - var(--target));
+      --distance-from-target-abs: calc(sqrt(var(--distance-from-target) * var(--distance-from-target)));
+      --distance-multiplier: var(--distance-multiplier-percentage) * var(--distance-from-target-abs); /* change 15% */
+      --gradual-fadeout: calc(1 - var(--distance-multiplier));
+      opacity: var(--gradual-fadeout);
+
+      --angle: calc((var(--sibling-index) - var(--target)) * var(--arc));
+      transform: rotateZ(var(--angle));
+    }
+  }
+}
+
+.animated-list-container-three {
+  --transition-duration: .75s;
+  --timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+  overflow-y: clip;
+}
+
+.animated-list-container-three a[data-state = 'activated'] {
+  display: block;
+  overflow-y: clip;
+  transition: 
+    transform var(--transition-duration) var(--timing-function),
+    translate 0s calc(var(--transition-duration) / 2),
+    --color-text 1000ms;  
+    animation: animated-list-three-blur-out var(--transition-duration);
+}
+
+.animated-list-container-three > span {
+  overflow-y: clip;
+}
+
+.animated-list-container-three > *:hover a[data-state = 'activated']{
+  
+  translate: 0 2lh;
+  transform: translateY(-2lh);
+
+  animation: animated-list-three-blur-in var(--transition-duration) forwards;
+}
+
+@keyframes animated-list-three-blur-in {
+  0% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  55% {
+    --color-text-2: ;
+    --color-text: ;
+  }
+  100% {
+    filter: blur(0);
+    --color-text-2: var(--random-color-2);
+    --color-text: var(--random-color);
+  }
+}
+@keyframes animated-list-three-blur-out {
+  0% {
+    filter: blur(0);
+    --color-text-2: var(--random-color-2);
+    --color-text: var(--random-color);
+  }
+  35% {
+    --color-text-2: var(--random-color-2);
+    --color-text: var(--random-color);
+  }
+  50% {
+    filter: blur(2px);
+    
+  }
+  100% {
+    filter: blur(0);
+  }
+}
 /* SVG Animations */ 
 
 @keyframes hamburger-one-open {
