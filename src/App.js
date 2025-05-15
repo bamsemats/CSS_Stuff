@@ -1,5 +1,5 @@
 import './App.css';
-import {useEffect} from 'react';
+import {useEffect, useLayoutEffect} from 'react';
 
 function handleClickButtonOne() {
   const buttonOne = document.querySelector('.button-one');
@@ -47,36 +47,34 @@ function handleMouseEnter(e) {
   }
 }
 
-
-
 function App() {
 
-  useEffect(() => {
+ useLayoutEffect(() => {
     const colorThemes = document.querySelectorAll('[name="theme"]');
-      console.log(colorThemes);
 
     const storeTheme = (theme) => {
-      localStorage.setItem('theme', theme)
-    }
+      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
+    };
 
-    colorThemes.forEach(theme => {
+    colorThemes.forEach((theme) => {
       theme.addEventListener('click', () => {
         storeTheme(theme.id);
       });
-      console.log('Event listener added!')
     });
 
     const setTheme = () => {
-      const activeTheme = localStorage.getItem('theme');
-      console.log('Active theme:', activeTheme);
-      colorThemes.forEach(theme => {
+      const activeTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', activeTheme);
+      colorThemes.forEach((theme) => {
         if (theme.id === activeTheme) {
           theme.checked = true;
         }
-      })
-    }
+      });
+    };
+
     setTheme();
-  }, [])
+  }, []);
 
   return (
     <div className="App">
