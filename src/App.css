@@ -484,20 +484,20 @@ html {
    
   }
   33% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   66% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   100% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-one-rotation);
   }
@@ -508,20 +508,20 @@ html {
    
   }
   75% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   50% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   0% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-one-rotation);
   }
@@ -532,38 +532,38 @@ html {
    
   }
   10% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   25% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   40% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   50% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
    80% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   100% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-two-rotation);
   }
@@ -574,38 +574,38 @@ html {
    
   }
   10% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   25% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   40% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   50% {
-    y: 45;
-    x: 80;
+    y: 45%;
+    x: 80%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
    80% {
-    y: 45;
-    x: 80;
+    y: 45%;
+    x: 80%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   100% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-two-rotation);
   }
@@ -616,38 +616,38 @@ html {
    
   }
   70% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   60% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   45% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   35% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   20% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   0% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-two-rotation);
   }
@@ -658,38 +658,38 @@ html {
    
   }
   70% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: 0deg;
   }
   60% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   45% {
-    y: 45;
-    x: 45;
+    y: 45%;
+    x: 45%;
     width: 10px;
     rotate: 0deg;
   }
   35% {
-    y: 45;
-    x: 80;
+    y: 45%;
+    x: 80%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   20% {
-    y: 45;
-    x: 80;
+    y: 45%;
+    x: 80%;
     width: 10px;
     rotate: var(--hamburger-two-rotation);
   }
   0% {
-    y: 45;
-    x: 10;
+    y: 45%;
+    x: 10%;
     width: 80px;
     rotate: var(--hamburger-two-rotation);
   }
