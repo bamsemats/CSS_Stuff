@@ -78,7 +78,7 @@ html {
   --color-button-one: #AAA;
   --color-button-two: #999;
   --color-button-three: #888;
-  --color-button-bg: #EEEDDD;
+  --color-button-bg: #d1ce9e;
   --color-text: #444;
   --color-text-2: #555;
 }
@@ -88,7 +88,7 @@ html {
   --color-button-one: #DDD;
   --color-button-two: #EEE;
   --color-button-three: #FFF;
-  --color-button-bg: #22222F;
+  --color-button-bg: #5f5f74;
   --color-text: #CCC;
   --color-text-2: #DDD;
 }
@@ -376,6 +376,41 @@ html {
   color: var(--color-text-2);
 }
 
+@media (width < 690px) {
+  .animated-list-div {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    width: 80vw;
+    height: 120vh;
+    margin-top: 4rem;
+  }
+  .animated-list-container-one,
+  .animated-list-container-two,
+  .animated-list-container-three {
+    gap: 0.5rem;
+    margin-left: 2rem;
+    &::before {
+      content: 'Animated List';
+      color: var(--color-button-bg);
+      font-size: clamp(0.8rem, 25vw, 2.5rem);
+      font-weight: 700;
+    }
+  }
+
+  .animated-list-container-one a,
+  .animated-list-container-two a,
+  .animated-list-container-three a {
+    font-size: clamp(0.8rem, 25vw, 2.5rem);
+  }
+
+  .animated-list-container-one span,
+  .animated-list-container-two span,
+  .animated-list-container-three span {
+    font-size: clamp(0.8rem, 25vw, 2.5rem);
+  }
+}
+
 .animated-list-container-one {
   @media (prefers-reduced-motion: no-preference) {
     & > a {
@@ -430,14 +465,13 @@ html {
   overflow-y: clip;
 }
 .animated-list-container-three a {
+  display: block;
+  overflow-y: clip;
   transition: 
     transform var(--transition-duration) var(--timing-function),
     translate 0s calc(var(--transition-duration) / 2);
 }
 .animated-list-container-three a[data-state = 'activated'] {
-  display: block;
-  overflow-y: clip;
-  
   animation: animated-list-three-blur-out var(--transition-duration);
 }
 
