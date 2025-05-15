@@ -50,6 +50,34 @@ function handleMouseEnter(e) {
 
 
 function App() {
+
+  useEffect(() => {
+    const colorThemes = document.querySelectorAll('[name="theme"]');
+      console.log(colorThemes);
+
+    const storeTheme = (theme) => {
+      localStorage.setItem('theme', theme)
+    }
+
+    colorThemes.forEach(theme => {
+      theme.addEventListener('click', () => {
+        storeTheme(theme.id);
+      });
+      console.log('Event listener added!')
+    });
+
+    const setTheme = () => {
+      const activeTheme = localStorage.getItem('theme');
+      console.log('Active theme:', activeTheme);
+      colorThemes.forEach(theme => {
+        if (theme.id === activeTheme) {
+          theme.checked = true;
+        }
+      })
+    }
+    setTheme();
+  }, [])
+
   return (
     <div className="App">
       <form className='color-picker' action=''>
