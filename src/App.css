@@ -382,7 +382,9 @@ html {
     align-items: center;
     gap: 5rem;
     width: 80vw;
-    height: 120vh;
+    min-height: 120vh;
+    height: fit-content;
+    padding-bottom: 4rem;
     margin-top: 4rem;
   }
   .animated-list-container-one,
