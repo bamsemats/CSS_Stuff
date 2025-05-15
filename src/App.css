@@ -52,7 +52,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -378,12 +377,12 @@ html {
 }
 
 .animated-list-container-one {
-  @media (hover) and (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) {
     & > a {
       transform-origin: left;
       transition: transform 0.75s ease-in-out, opacity 0.3s ease-in-out;
     }
-    &:hover > a:not(:hover) {
+    &:has(:hover, :focus-within) > a:not(:hover, :focus) {
       opacity: 0.25;
       transform: scale(0.8);
     }
@@ -400,19 +399,19 @@ html {
   --arc: 4deg;
   --distance-multiplier-percentage: .25;
 
-  @media (hover) and (prefers-reduced-motion: no-preference) {
-    &:has(a:nth-child(1):hover) {--target: 1}
-    &:has(a:nth-child(2):hover) {--target: 2}
-    &:has(a:nth-child(3):hover) {--target: 3}
-    &:has(a:nth-child(4):hover) {--target: 4}
-    &:has(a:nth-child(5):hover) {--target: 5}
-    &:has(a:nth-child(6):hover) {--target: 6}
-    &:has(a:nth-child(7):hover) {--target: 7}
-    &:has(a:nth-child(8):hover) {--target: 8}
-    &:has(a:nth-child(9):hover) {--target: 9}
-    &:has(a:nth-child(10):hover) {--target: 10}
+  @media (prefers-reduced-motion: no-preference) {
+    &:has(a:nth-child(1):hover, a:nth-child(1):focus-within) {--target: 1}
+    &:has(a:nth-child(2):hover, a:nth-child(2):focus-within) {--target: 2}
+    &:has(a:nth-child(3):hover, a:nth-child(3):focus-within) {--target: 3}
+    &:has(a:nth-child(4):hover, a:nth-child(4):focus-within) {--target: 4}
+    &:has(a:nth-child(5):hover, a:nth-child(5):focus-within) {--target: 5}
+    &:has(a:nth-child(6):hover, a:nth-child(6):focus-within) {--target: 6}
+    &:has(a:nth-child(7):hover, a:nth-child(7):focus-within) {--target: 7}
+    &:has(a:nth-child(8):hover, a:nth-child(8):focus-within) {--target: 8}
+    &:has(a:nth-child(9):hover, a:nth-child(9):focus-within) {--target: 9}
+    &:has(a:nth-child(10):hover, a:nth-child(10):focus-within) {--target: 10}
 
-    &:hover > a:not(:hover) {
+    &:has(:hover, :focus-within) > a:not(:hover, :focus) {
       --distance-from-target: calc(var(--sibling-index) - var(--target));
       --distance-from-target-abs: calc(sqrt(var(--distance-from-target) * var(--distance-from-target)));
       --distance-multiplier: var(--distance-multiplier-percentage) * var(--distance-from-target-abs); /* change 15% */
@@ -446,7 +445,7 @@ html {
   overflow-y: clip;
 }
 
-.animated-list-container-three > *:hover a[data-state = 'activated']{
+.animated-list-container-three > *:has(:hover, :focus-within) a[data-state = 'activated']{
   
   translate: 0 2lh;
   transform: translateY(-2lh);
@@ -454,6 +453,8 @@ html {
   --color-text-2: var(--random-color-2);
   animation: animated-list-three-blur-in var(--transition-duration) forwards;
 }
+
+/* Animated List Animations */
 
 @keyframes animated-list-three-blur-in {
   0% {
