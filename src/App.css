@@ -35,8 +35,6 @@
 } 
 
 :root {
-
-
   transition: 
     --color-bg 250ms, 
     --color-button-one 250ms, 
@@ -46,7 +44,6 @@
     --color-text 0ms,
     --color-text-2 0ms;
 }
-
 *,
 *::before,
 *::after {
@@ -446,6 +443,8 @@ html {
 
 .animated-list-container-three > div {
   overflow-y: clip;
+  margin: 0;
+  padding: 0;
 }
 
 .animated-list-container-three > *:has(:hover, :focus-within) a[data-state = 'activated']{
