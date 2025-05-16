@@ -128,7 +128,7 @@ function App() {
           </svg>
         </button>
          <button className='button-two' onClick={handleClickButtonTwo}>
-          <svg fill='var(--color-button-two)' className='hamburger' viewBox='0 0 100 100' width='250'>
+          <svg fill='var(--color-button-one)' className='hamburger' viewBox='0 0 100 100' width='250'>
             <rect className='line top1' width='80' height='10' x='10' y='25' rx='5'></rect>
             <rect className='line top2' width='80' height='10' x='10' y='25' rx='5'></rect>
             <rect className='line middle' width='80' height='10' x='10' y='45' rx='5'></rect>
@@ -137,7 +137,7 @@ function App() {
           </svg>
         </button>
         <button className='button-three' onClick={handleClickButtonThree}>
-          <svg stroke='var(--color-button-three)' fill='none' className='hamburger' viewBox='-10 -10 120 120' width='250'>
+          <svg stroke='var(--color-button-one)' fill='none' className='hamburger' viewBox='0 0 100 100' width='250'>
             <path className='line' strokeWidth='10' strokeLinecap='round' strokeLinejoin='round' d='m 14 70 l 70 0 a 1 1 0 0 0 0 -20 l -70 0 a 1 1 0 0 1 0 -20 l 70 0 a 1 1 0 0 0 -35 -20 l 0 76'></path>
           </svg>
         </button>

@@ -3,6 +3,16 @@
   initial-value: #EEE;
   inherits: true;
 } 
+@property --color-bg2 {
+  syntax: "<color>";
+  initial-value: #dcd6d1;
+  inherits: true;
+}
+@property --color-bg-transparent {
+  syntax: "<color>";
+  initial-value: #dcd6d100;
+  inherits: true;
+}
 @property --button-one {
   syntax: "<color>";
   initial-value: #AAA;
@@ -17,10 +27,10 @@
   syntax: "<color>";
   initial-value: #888;
   inherits: true;
-} 
-@property --button-bg {
+}
+@property --button-bg2 {
   syntax: "<color>";
-  initial-value: #EEEDDD;
+  initial-value: #d8d7c4;
   inherits: true;
 } 
 @property --color-text {
@@ -33,7 +43,16 @@
   initial-value: #555;
   inherits: true;
 } 
-
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --wavy-bg-pos {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+}
 :root {
   transition: 
     --color-bg 250ms, 
@@ -62,7 +81,46 @@ a {
   width: 1px;
 }
 html {
-  background-color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-bg), var(--color-bg2));
+  position: relative;
+  overflow: hidden;
+}
+html::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--color-bg2), var(--color-bg-transparent) 30%);
+  mask-image:
+    url('./assets/wavy-bg-3.svg');
+  mask-repeat: repeat-y;
+  filter: brightness(1.35);
+  transform: translateY(calc(var(--wavy-bg-pos) * -1));
+  opacity: 0.5;
+  animation: wavy-bg-animation 25s linear infinite;
+}
+html::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--color-bg2), var(--color-bg-transparent) 30%);
+  mask-image:
+    url('./assets/wavy-bg-2.svg'),
+    url('./assets/wavy-bg-3.svg');
+  mask-repeat: repeat-y;
+  filter: brightness(1.5);
+  transform: scale(1, -1) translateY(var(--wavy-bg-pos));
+  opacity: 0.5;
+  animation: wavy-bg-animation 15s linear infinite;
+}
+@keyframes wavy-bg-animation {
+  0%, 100% {
+    --wavy-bg-pos: 0%;
+  }
+  50% {
+    --wavy-bg-pos: 5%;
+  }
 }
 .App {
   display: flex;
@@ -71,23 +129,27 @@ html {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  /* background-color: var(--color-bg); */
+  backdrop-filter: blur(2px);
 }
 :root[data-theme='light'] {
   --color-bg: #EEE;
-  --color-button-one: #AAA;
-  --color-button-two: #999;
-  --color-button-three: #888;
-  --color-button-bg: #d1ce9e;
+  --color-bg2: #dcd6d1;
+  --color-bg-transparent: #dcd6d100;
+  --color-button-one: #bcbcbc;
+  --color-button-two: #888888;
+  --color-button-three: #797979;
+  --color-button-bg: #7f7f7f;
   --color-text: #444;
   --color-text-2: #555;
 }
 
 :root[data-theme='dark'] {
   --color-bg: #222;
-  --color-button-one: #DDD;
-  --color-button-two: #EEE;
-  --color-button-three: #FFF;
+  --color-bg2: #3c3838;
+  --color-bg-transparent: #3c383800;
+  --color-button-one: #f3f3f3;
+  --color-button-two: #b8b8b8;
+  --color-button-three: #828282;
   --color-button-bg: #5f5f74;
   --color-text: #CCC;
   --color-text-2: #DDD;
@@ -95,9 +157,11 @@ html {
 
 :root[data-theme='pink'] {
   --color-bg: #db7bea;
-  --color-button-one: #e5d8e8;
-  --color-button-two: #dbc7e0;
-  --color-button-three: #d7c1db;
+  --color-bg2: #c35cd3;
+  --color-bg-transparent: #c35cd300;
+  --color-button-one: #fcf1fe;
+  --color-button-two: #ebcaf4;
+  --color-button-three: #eeacf7;
   --color-button-bg: #b251c1;
   --color-text: #e5d8e8;
   --color-text-2: #dbc7e0;
@@ -105,9 +169,11 @@ html {
 
 :root[data-theme='blue'] {
   --color-bg: #71b4e4;
-  --color-button-one: #d8e5ef;
-  --color-button-two: #d0dce5;
-  --color-button-three: #c8d5df;
+  --color-bg2: #458bbc;
+  --color-bg-transparent: #458abc00;
+  --color-button-one: #ecf4fb;
+  --color-button-two: #d0e9fc;
+  --color-button-three: #a5d5fa;
   --color-button-bg: #4d94c7;
   --color-text: #d8e5ef;
   --color-text-2: #d0dce5;
@@ -115,9 +181,11 @@ html {
 
 :root[data-theme='green'] {
   --color-bg: #71e4a9;
-  --color-button-one: #ddebe4;
-  --color-button-two: #d7eae0;
-  --color-button-three: #d0e4da;
+  --color-bg2: #4ec788;
+  --color-transparent: #4ec78800;
+  --color-button-one: #f3fef9;
+  --color-button-two: #c8fde1;
+  --color-button-three: #9bf7c9;
   --color-button-bg: #57d594;
   --color-text: #ddebe4;
   --color-text-2: #d7eae0;
@@ -200,13 +268,31 @@ html {
   }
 }
 
-
+button {
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+}
+button::before {
+  position: absolute;
+  content: '';
+  inset: -.45rem;
+  border: solid 1.5rem;
+  border-image: conic-gradient(from var(--border-angle), var(--color-button-one), var(--color-button-one), var(--color-button-two), var(--color-button-three), var(--color-button-three), var(--color-button-two), var(--color-button-one)) 1;
+  filter: blur(0.75em);
+  opacity: 0.7;
+  overflow: hidden;
+  animation: button-border-spin 5s linear infinite;
+}
 /* Button One */
 .button-one {
   color: var(--color-button-one);
   background-color: var(--color-button-bg);
+  background-color: transparent;
   border: 1rem solid var(--color-button-one);
-  border-radius: 1.75rem;
+  border: none;
+  margin-inline: 1rem;
+  border-radius: 1rem;
 }
 
 .button-one .line {
@@ -242,8 +328,12 @@ html {
 /* Button Two */
 .button-two {
   color: var(--color-button-two);
+  color: var(--color-button-one);
   background-color: var(--color-button-bg);
+  background-color: transparent;
   border: 1rem solid var(--color-button-two);
+  border: none;
+  margin-inline: 1rem;
   border-radius: 1.75rem;
 }
 
@@ -307,8 +397,12 @@ html {
 /* Button Three */
 .button-three {
   color: var(--color-button-three);
+  color: var(--color-button-one);
   background-color: var(--color-button-bg);
+  background-color: transparent;
   border: 1rem solid var(--color-button-three);
+  border: none;
+  margin-inline: 1rem;
   border-radius: 1.75rem;
 }
 
@@ -321,6 +415,7 @@ html {
 
 .button-three .hamburger {
   transition: rotate 600ms 300ms cubic-bezier(0.4, 0, 0.6, 1);
+  overflow: visible;
 }
 
 .button-three[data-state = 'opened'] .hamburger {
@@ -490,6 +585,14 @@ html {
   --color-text: var(--random-color);
   --color-text-2: var(--random-color-2);
   animation: animated-list-three-blur-in var(--transition-duration) forwards;
+}
+
+/* Button Border Animation*/
+
+@keyframes button-border-spin {
+  to {
+    --border-angle: 1turn;
+  }
 }
 
 /* Animated List Animations */
