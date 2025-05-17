@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/CSS_Stuff/static/css/main.1615bec1.css",
-    "main.js": "/CSS_Stuff/static/js/main.61cb3450.js",
+    "main.css": "/CSS_Stuff/static/css/main.b16bf97f.css",
+    "main.js": "/CSS_Stuff/static/js/main.c5a23959.js",
     "static/js/453.7a8ab31d.chunk.js": "/CSS_Stuff/static/js/453.7a8ab31d.chunk.js",
     "index.html": "/CSS_Stuff/index.html",
+    "static/media/instagram.svg": "/CSS_Stuff/static/media/instagram.f9e96a9b55373a4851ee.svg",
+    "static/media/linkedin.svg": "/CSS_Stuff/static/media/linkedin.fce7c1064fce6b5073fd.svg",
+    "static/media/twitter.svg": "/CSS_Stuff/static/media/twitter.4a9d422b54f28fcd313b.svg",
+    "static/media/facebook.svg": "/CSS_Stuff/static/media/facebook.aab200bdd20f7a5aba39b2717dc5903a.svg",
     "static/media/wavy-bg-3.svg": "/CSS_Stuff/static/media/wavy-bg-3.a14792bebac4a600401a.svg",
     "static/media/wavy-bg-2.svg": "/CSS_Stuff/static/media/wavy-bg-2.812bed2ef5448e15023b.svg",
     "static/media/bottom-bg-triangle.svg": "/CSS_Stuff/static/media/bottom-bg-triangle.ab61dd847a9fb28d097a.svg",
-    "main.1615bec1.css.map": "/CSS_Stuff/static/css/main.1615bec1.css.map",
-    "main.61cb3450.js.map": "/CSS_Stuff/static/js/main.61cb3450.js.map",
+    "main.b16bf97f.css.map": "/CSS_Stuff/static/css/main.b16bf97f.css.map",
+    "main.c5a23959.js.map": "/CSS_Stuff/static/js/main.c5a23959.js.map",
     "453.7a8ab31d.chunk.js.map": "/CSS_Stuff/static/js/453.7a8ab31d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1615bec1.css",
-    "static/js/main.61cb3450.js"
+    "static/css/main.b16bf97f.css",
+    "static/js/main.c5a23959.js"
   ]
 }
