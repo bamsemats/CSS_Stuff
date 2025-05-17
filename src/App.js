@@ -1,5 +1,6 @@
 import './App.css';
 import {useEffect, useLayoutEffect} from 'react';
+import facebookImage from './assets/social-media-assets/facebook.svg';
 
 function handleClickButtonOne() {
   const buttonOne = document.querySelector('.button-one');
@@ -179,6 +180,12 @@ function App() {
           <div><a style={{'--sibling-index': 9}} className='span9' onMouseEnter={() =>handleMouseEnter('span9')}><span className='inner-span'>09</span>Lemon</a></div>
           <div><a style={{'--sibling-index': 10}} className='span10' onMouseEnter={() =>handleMouseEnter('span10')}><span className='inner-span'>10</span>Clementine</a></div>
         </div>
+      </div>
+      <div className='social-media-buttons-div'>
+        <button className='social-media-button facebook'><span className='facebook-fill'></span></button>
+        <button className='social-media-button instagram'><span className='instagram-fill'></span></button>
+        <button className='social-media-button linkedin'><span className='linkedin-fill'></span></button>
+        <button className='social-media-button twitter'><span className='twitter-fill'></span></button>
       </div>
     </div>
   );
