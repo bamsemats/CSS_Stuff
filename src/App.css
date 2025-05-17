@@ -83,34 +83,37 @@ a {
 html {
   background: linear-gradient(135deg, var(--color-bg), var(--color-bg2));
   position: relative;
-  overflow: hidden;
 }
 html::after {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  inset: -10%;
   z-index: -1;
+  width: auto;
+  height: auto;
   background: linear-gradient(90deg, var(--color-bg2), var(--color-bg-transparent) 30%);
   mask-image:
     url('./assets/wavy-bg-3.svg');
   mask-repeat: repeat-y;
   filter: brightness(1.35);
-  transform: translateY(calc(var(--wavy-bg-pos) * -1));
+  transform: translateY(calc(var(--wavy-bg-pos) * -1)) translateX(7.5%);
   opacity: 0.5;
   animation: wavy-bg-animation 25s linear infinite;
 }
 html::before {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  inset: -10%;
   z-index: -1;
+  width: auto;
+  height: auto;
   background: linear-gradient(90deg, var(--color-bg2), var(--color-bg-transparent) 30%);
   mask-image:
     url('./assets/wavy-bg-2.svg'),
     url('./assets/wavy-bg-3.svg');
   mask-repeat: repeat-y;
   filter: brightness(1.5);
-  transform: scale(1, -1) translateY(var(--wavy-bg-pos));
+  transform: scale(1, -1) translateY(var(--wavy-bg-pos)) translateX(7.5%);
   opacity: 0.5;
   animation: wavy-bg-animation 15s linear infinite;
 }
@@ -123,13 +126,47 @@ html::before {
   }
 }
 .App {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   min-height: 100vh;
+  height: 100%;
   width: 100%;
   backdrop-filter: blur(2px);
+  padding-bottom: 10rem;
+}
+body:before {
+  /* content: ''; */
+  position: fixed;
+  inset: 0;
+  width: auto;
+  height: auto;
+  opacity: 0.5;
+  background: linear-gradient(-65deg, var(--color-button-one), var(--color-button-one) 8%, var(--color-bg-transparent) 8%, var(--color-bg-transparent));
+  mask-image: url('./assets/bottom-bg-triangle.svg');
+  mask-repeat: no-repeat;
+  mask-position: 100% 100%;
+  transform: translate();
+  z-index: -1;
+}
+body:after {
+  content: 'mats.ronnqvist';
+  position: fixed;
+  inset: 0;
+  height: auto;
+  width: auto;
+  font-family: system-ui;
+  font-weight: 800;
+  font-size: clamp(2rem, 2vw + 2vh, 2rem);
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+  writing-mode: vertical-rl;
+  filter: brightness(1.1);
+  bottom: 0%;
+  left: 80%;
+  text-align:center;
 }
 :root[data-theme='light'] {
   --color-bg: #EEE;
@@ -438,9 +475,9 @@ button::before {
   flex-direction: row;
   justify-content: space-between;
   width: 80vw;
-  height: 140vh;
-  padding: 0rem 2rem;
+  padding: 0rem 1rem 4rem 1rem;
   margin-top: 8rem;
+  overflow: hidden;
 }
 
 .animated-list-container-one,
