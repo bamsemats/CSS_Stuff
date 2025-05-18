@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/CSS_Stuff/static/css/main.b16bf97f.css",
+    "main.css": "/CSS_Stuff/static/css/main.f8014fe3.css",
     "main.js": "/CSS_Stuff/static/js/main.c5a23959.js",
     "static/js/453.7a8ab31d.chunk.js": "/CSS_Stuff/static/js/453.7a8ab31d.chunk.js",
     "index.html": "/CSS_Stuff/index.html",
@@ -11,12 +11,12 @@
     "static/media/wavy-bg-3.svg": "/CSS_Stuff/static/media/wavy-bg-3.a14792bebac4a600401a.svg",
     "static/media/wavy-bg-2.svg": "/CSS_Stuff/static/media/wavy-bg-2.812bed2ef5448e15023b.svg",
     "static/media/bottom-bg-triangle.svg": "/CSS_Stuff/static/media/bottom-bg-triangle.ab61dd847a9fb28d097a.svg",
-    "main.b16bf97f.css.map": "/CSS_Stuff/static/css/main.b16bf97f.css.map",
+    "main.f8014fe3.css.map": "/CSS_Stuff/static/css/main.f8014fe3.css.map",
     "main.c5a23959.js.map": "/CSS_Stuff/static/js/main.c5a23959.js.map",
     "453.7a8ab31d.chunk.js.map": "/CSS_Stuff/static/js/453.7a8ab31d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b16bf97f.css",
+    "static/css/main.f8014fe3.css",
     "static/js/main.c5a23959.js"
   ]
 }
