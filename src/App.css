@@ -650,7 +650,7 @@ body:after {
   align-items: center;
   justify-content: center;
   width: 75%;
-  gap: calc(0.5rem + 2vw);
+  gap: calc(1rem + 4vw);
   padding-top: 4rem;
 }
 .social-media-button {
@@ -665,35 +665,37 @@ body:after {
   position: relative;
   background-color: transparent;
   overflow: visible;
-  transition: background 200ms linear;
-  /* &:hover {
+  transition: background var(--social-media-transition) ease-out, inset var(--social-media-transition) linear, scale calc(var(--social-media-transition) * 1) linear(0, -0.004 5.7%, -0.017 10.7%, -0.042 15.6%, -0.08 20.6%, -0.176 29.6%, -0.417 48.1%, -0.489 55.7%, -0.509 59.4%, -0.514 62.9%, -0.505 66.2%, -0.482 69.3%, -0.421 73.7%, -0.326 77.9%, -0.197 81.9%, -0.031 85.8%, 0.407 93.1%, 1);
+  &:hover {
     background: var(--color-accent);
-  } */
-}
-.social-media-button {
+    scale: 1.01;
+  }
   
   &::after, &::before {
     content: '';
     position: absolute;
-    inset: -0.25rem;
+    inset: -0.75rem;
     z-index: -1;
     border-radius: inherit;
     opacity: 0;
     /* filter: blur(5px); */
     background: conic-gradient(from 0deg, var(--color-accent) var(--background-angle), rgba(255, 255, 255, 0) var(--background-angle));
-    transition: opacity var(--social-media-transition) linear;
+    transition: opacity var(--social-media-transition) linear, inset calc(var(--social-media-transition) * 2) 400ms linear;;
   }
   &:hover::after {
     animation: background-gradient-animation var(--social-media-transition) cubic-bezier(0.133, 0, 1, -0.008) forwards;
     opacity: 1;
+    inset: 0;
   }
   &::before {
     background: var(--color-accent);
-    transition: opacity calc(var(--social-media-transition) * 2) 200ms;
+    transition: opacity calc(var(--social-media-transition) * 2) 400ms ease-in;
+    inset: 0;
     /* filter: blur(6px); */
   }
   &:hover::before {
     opacity: 1;
+    inset: 0;
   }
 
   
@@ -731,12 +733,12 @@ body:after {
     flex-direction: column;
   }
   .social-media-button {
-    width: calc(10px + 20vw);
-    height: calc(10px + 20vw);  
+    width: calc(10px + 30vw);
+    height: calc(10px + 30vw);  
   }
   .facebook-fill, .instagram-fill, .linkedin-fill, .twitter-fill {
-    width: calc(10px + 20vw);
-    height: calc(10px + 20vw);
+    width: calc(10px + 30vw);
+    height: calc(10px + 30vw);
 }
 }
 
